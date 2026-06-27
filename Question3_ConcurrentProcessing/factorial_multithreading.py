@@ -8,8 +8,7 @@ class FactorialPerformanceAnalyzer:
         self.rounds = 10
 
     def factorial(self, number):
-        # This function calculates the factorial of a given number.
-        # Example: 5! = 5 x 4 x 3 x 2 x 1
+
         result = 1
 
         for value in range(2, number + 1):
@@ -18,12 +17,10 @@ class FactorialPerformanceAnalyzer:
         return result
 
     def calculate_factorial_task(self, number, results):
-        # This function is used as the target task for each thread.
-        # Each thread calculates one factorial value and stores the result.
         results[number] = self.factorial(number)
 
     def run_multithreaded_once(self):
-        # This method calculates 50!, 100!, and 200! using three separate threads.
+
         results = {}
         threads = []
 
@@ -46,7 +43,7 @@ class FactorialPerformanceAnalyzer:
         return elapsed_time, results
 
     def run_sequential_once(self):
-        # This method calculates 50!, 100!, and 200! without using multithreading.
+        
         results = {}
 
         start_time = time.perf_counter_ns()
